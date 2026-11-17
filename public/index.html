@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10243d">
+<title>Shikshak Success | Future Teacher Shivani</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-icon">शि</div><div><b>Shikshak Success</b><small>UP SUPER TET · PRIMARY</small></div></div>
+    <nav>
+      <button class="nav active" data-page="dashboard">▦ <span>Dashboard</span></button>
+      <button class="nav" data-page="practice">▤ <span>Question Bank</span></button>
+      <button class="nav" data-page="tests">◷ <span>Mock Tests</span></button>
+      <button class="nav" data-page="analytics">▥ <span>My Analysis</span></button>
+      <button class="nav" data-page="sources">▣ <span>PYQ & Sources</span></button>
+    </nav>
+    <div class="side-note"><b>Daily goal</b><p>रोज़ अभ्यास करें, गलतियों को दोहराएँ और प्रगति देखें।</p><div class="goalbar"><i id="goalbar"></i></div><small id="goaltext">0 / 25 questions today</small></div>
+    <div class="side-foot">Made for focused preparation<br><span>Practice • Review • Improve</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><button class="menu" id="menu" type="button" aria-label="मेन्यू खोलें" aria-expanded="false">⋮</button><div><div class="eyebrow">PRIMARY TEACHER EXAM · CLASSES 1–5</div><h1 id="pageTitle">Future Teacher Shivani 👩‍🏫</h1></div><div class="top-actions"><span class="pill">● Practice mode</span><button class="avatar" title="Future Teacher Shivani">S</button></div></header>
+    <section id="dashboard" class="page active">
+      <div class="hero"><div><span class="tag">FUTURE TEACHER SHIVANI · PREPARATION CENTRE</span><h2>आज की मेहनत,<br><em>कल की सफलता।</em></h2><p>शिवानी की UP Super TET Primary तैयारी — मजबूत अवधारणा, नियमित अभ्यास और बेहतर परिणाम।</p><button class="primary" data-go="practice">अभ्यास शुरू करें <b>→</b></button></div><div class="hero-art"><div class="book">📚</div><div class="cap">🎓</div><div class="hero-circle">शिक्षक<br>बनने की<br><strong>तैयारी</strong></div></div></div>
+      <div class="stats"><div class="stat"><span>Question bank</span><b id="totalQ">2000</b><small>मौलिक अभ्यास प्रश्न</small></div><div class="stat"><span>Attempted</span><b id="attempted">0</b><small>अब तक हल किए</small></div><div class="stat"><span>Accuracy</span><b id="accuracy">—</b><small>सही उत्तर का प्रतिशत</small></div><div class="stat"><span>Study streak</span><b id="streak">0</b><small>Practice days</small></div></div>
+      <div class="section-head"><div><span class="eyebrow">LEARNING PATH</span><h2>विषय चुनें</h2></div><button class="textbtn" data-go="practice">सभी प्रश्न देखें →</button></div>
+      <div class="subject-grid" id="subjectGrid"></div>
+      <div class="two-col"><div class="panel"><div class="panel-head"><div><span class="eyebrow">QUICK START</span><h3>आज का अभ्यास</h3></div><span class="chip">Recommended</span></div><p class="muted">25 प्रश्नों का topic-wise test देकर अपनी समझ जाँचें।</p><button class="primary" data-go="tests">Topic test चुनें →</button></div><div class="panel quote"><span class="eyebrow">REMEMBER</span><h3>गलत उत्तर असफलता नहीं,<br>अगली सफलता का संकेत है।</h3><p>हर explanation पढ़ें और गलत प्रश्नों को दोबारा हल करें।</p></div></div>
+    </section>
+    <section id="practice" class="page">
+      <div class="section-head"><div><span class="eyebrow">QUESTION LIBRARY</span><h2>Question Bank</h2><p class="muted">Subject, difficulty और question type के अनुसार अभ्यास करें।</p></div><span class="chip" id="bankCount">2000 questions</span></div>
+      <div class="filters"><input id="search" placeholder="प्रश्न या topic खोजें…"><select id="subjectFilter"><option value="">सभी विषय</option></select><select id="difficultyFilter"><option value="">सभी स्तर</option><option>आसान</option><option>मध्यम</option><option>कठिन</option></select><button class="secondary" id="resetFilters">Reset</button></div>
+      <div id="questionList" class="question-list"></div>
+    </section>
+    <section id="tests" class="page">
+      <div class="section-head"><div><span class="eyebrow">EXAM PRACTICE</span><h2>Mock Test Centre</h2><p class="muted">Negative marking लागू है: सही +3, गलत −1, छोड़ा हुआ 0.</p></div></div>
+      <div class="test-cards">
+        <div class="test-card featured"><span class="tag">FULL MOCK</span><div class="test-icon">📝</div><h3>Full Length Practice</h3><p>120 मिनट · 120 प्रश्न · सभी विषय</p><div class="test-meta"><span>+3 / −1 marks</span><span>5 options · custom practice</span></div><button class="primary" id="fullTest">Start full mock →</button></div>
+        <div class="test-card"><span class="tag">TOPIC TEST</span><div class="test-icon">🎯</div><h3>Topic-wise Test</h3><p>चुने हुए विषय से 25 प्रश्नों का टेस्ट।</p><select id="topicSelect"></select><button class="primary" id="topicTest">Start 25-question test →</button></div>
+        <div class="test-card"><span class="tag">QUICK PRACTICE</span><div class="test-icon">⚡</div><h3>Quick 25</h3><p>मिश्रित विषयों से 25 प्रश्न।</p><button class="secondary" id="quickTest">Start quick test →</button></div>
+      </div>
+      <div class="notice"><b>Exam pattern note</b><p>यह 5-option practice portal है। उपलब्ध 2026 primary scheme में 120 प्रश्न, 120 मिनट, +3/−1 और 4 विकल्प बताए गए हैं। वास्तविक परीक्षा के लिए नवीनतम UPESSC notification ही मान्य होगा।</p></div>
+    </section>
+    <section id="analytics" class="page">
+      <div class="section-head"><div><span class="eyebrow">YOUR PERFORMANCE</span><h2>My Analysis</h2><p class="muted">इस browser पर किए गए attempts का रिकॉर्ड।</p></div><button class="secondary" id="clearData">Reset progress</button></div>
+      <div class="stats"><div class="stat"><span>Total attempted</span><b id="aAttempted">0</b></div><div class="stat"><span>Correct</span><b id="aCorrect">0</b></div><div class="stat"><span>Wrong</span><b id="aWrong">0</b></div><div class="stat"><span>Net score</span><b id="aScore">0</b></div></div>
+      <div class="panel"><div class="panel-head"><h3>Subject-wise accuracy</h3><span class="chip">Live from your attempts</span></div><div id="subjectAnalysis" class="bars"></div></div>
+      <div class="panel"><h3>Revision priority</h3><p class="muted">जिन विषयों में accuracy कम है, उन्हें पहले revise करें। अभी पर्याप्त attempts न होने पर नियमित अभ्यास करें।</p><div id="weakTopics"></div></div>
+    </section>
+    <section id="sources" class="page">
+      <div class="section-head"><div><span class="eyebrow">AUTHENTIC PREPARATION</span><h2>PYQ & Official Sources</h2><p class="muted">PYQ का source verify करें। Practice questions को PYQ न समझें।</p></div></div>
+      <div class="source-grid">
+        <a class="source" href="https://upessc.up.gov.in/" target="_blank" rel="noopener"><b>UPESSC Official Website ↗</b><span>Official notifications, syllabus and recruitment updates.</span></a>
+        <a class="source" href="https://pyqsathi.com/papers/up-super-tet-written-2019-primary-classes-1-5/" target="_blank" rel="noopener"><b>UP Super TET 2019 Primary Paper ↗</b><span>Primary classes 1–5 paper listing; verify paper and answer key against official source.</span></a>
+        <a class="source" href="https://form.utkarsh.com/up/assets/syllabus/TET_PRIMARY.pdf" target="_blank" rel="noopener"><b>UPTET Primary Syllabus PDF ↗</b><span>Reference syllabus for Level-I / Classes 1–5.</span></a>
+        <a class="source" href="https://www.pw.live/teaching/exams/up-super-tet-syllabus-2026-new-changes-primary" target="_blank" rel="noopener"><b>2026 Primary Syllabus Overview ↗</b><span>Secondary reference; cross-check all changes with UPESSC.</span></a>
+      </div>
+      <div class="notice"><b>Question provenance</b><p>इस starter version में दिए गए प्रश्न मौलिक अभ्यास प्रश्न हैं, official PYQs नहीं। पुराने official papers के प्रश्न/उत्तर को source और answer-key verification के बाद अलग से जोड़ा जाना चाहिए।</p></div>
+    </section>
+    <section id="quiz" class="page">
+      <div class="quiz-top"><button class="textbtn" id="exitQuiz">← Exit test</button><span class="chip" id="quizMode">Practice</span><span class="timer" id="timer">00:00</span></div>
+      <div class="quiz-progress"><div id="progressFill"></div></div>
+      <div class="quiz-layout"><div class="quiz-main"><div class="q-meta"><span id="qSubject">Subject</span><span id="qNumber">Question 1 of 25</span><span id="qDifficulty">मध्यम</span></div><h2 id="qText"></h2><div id="options" class="options"></div><div class="quiz-actions"><button class="secondary" id="prevQ">← Previous</button><button class="secondary" id="clearAnswer">Clear response</button><button class="primary" id="nextQ">Save & Next →</button></div></div><aside class="q-palette"><b>Question palette</b><p class="muted">Green: answered · Grey: not answered</p><div id="palette" class="palette"></div><div class="legend"><span>● Answered</span><span>○ Not answered</span></div><button class="primary submit" id="submitTest">Submit test</button></aside></div>
+    </section>
+    <section id="result" class="page">
+      <div class="result-hero"><div class="result-medal">🏆</div><span class="eyebrow">TEST COMPLETED</span><h2>Your practice report</h2><div class="score" id="resultScore">0</div><p id="resultText">Keep practising.</p></div>
+      <div class="stats"><div class="stat"><span>Correct</span><b id="rCorrect">0</b></div><div class="stat"><span>Wrong</span><b id="rWrong">0</b></div><div class="stat"><span>Unattempted</span><b id="rSkipped">0</b></div><div class="stat"><span>Accuracy</span><b id="rAccuracy">0%</b></div></div>
+      <div class="panel"><h3>Answer review</h3><div id="review"></div></div><button class="primary" id="backDashboard">Back to dashboard</button>
+    </section>
+    <footer>Shikshak Success · Independent practice tool · Verify official exam updates at UPESSC</footer>
+  </main>
+</div>
+<script src="app.js"></script>
+</body></html>
